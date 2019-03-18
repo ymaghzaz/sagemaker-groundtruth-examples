@@ -1,11 +1,12 @@
 "use strict";
 
-module.exports.handler = async (event, context) => {
+module.exports.handler = async event => {
+  console.log("Event %j", event);
+  const dataObject = event.dataObject;
+
   return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: "preLabeling",
-      input: event
-    })
+    taskInput: {
+      taskObject: (dataObject && dataObject["source-ref"]) || null
+    }
   };
 };
