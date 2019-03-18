@@ -1,0 +1,12 @@
+service: sls-groundtruth-input
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  groundtruth-pre-labeling:
+    handler: preLabeling.handler
+
+  groundtruth-post-labeling:
+    handler: postLabeling.handler
