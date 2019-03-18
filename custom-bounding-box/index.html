@@ -1,0 +1,144 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<style>
+  .img-instructions {
+    width: 300px;
+    height: 300px;
+  }
+</style>
+
+<crowd-form>
+  <crowd-bounding-box
+    initial-value="{{ task.input.annotatedResult.boundingBoxes }}"
+    name="annotatedResult"
+    labels="['document_with_face','document_without_face']"
+    src="{{ task.input.taskObject | grant_read_access }}"
+    header="Draw boxes around all Documents in this image"
+  >
+    <full-instructions header="Bounding Box Instructions">
+      <p>
+        Use the bounding box tool to draw boxes around the requested target of
+        interest:
+      </p>
+      <ol>
+        <li>
+          <div>
+            <h4>Document with face</h4>
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/Twj9zs3/good1.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Document without face</h4>
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/F0HZnbG/good2.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Document with face</h4>
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/0JS8b9j/good3.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Please select all documents</h4>
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/F4pr6ym/good4.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>Please select all documents</h4>
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/F4pr6ym/good4.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>document with face can be rotated</h4>
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/S7cYSp9/good5.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>document with face can be rotated</h4>
+
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/3N5WDyL/good6.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>The selection should contain the whole document</h4>
+
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/6N2bVBk/wrong1.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>The selection should contain the whole document</h4>
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/Bc8kvyP/wrong2.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>The selection should contain the whole document</h4>
+
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/SX0PfjR/wrong3.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>All documents appearing on the picture should be selected</h4>
+
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/MPnTnfG/wrong4.jpg"
+            />
+          </div>
+        </li>
+        <li>
+          <div>
+            <h4>All documents appearing on the picture should be selected</h4>
+
+            <img
+              class="img-instructions"
+              src="https://i.ibb.co/NmC0jsH/wrong5.jpg"
+            />
+          </div>
+        </li>
+      </ol>
+    </full-instructions>
+
+    <short-instructions>
+      Draw boxes around all Documents in this image
+    </short-instructions>
+  </crowd-bounding-box>
+</crowd-form>
