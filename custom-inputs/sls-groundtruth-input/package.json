@@ -1,0 +1,13 @@
+{
+  "name": "sls-groundtruth-input",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "deploy": "yarn deploy:dev",
+    "deploy:dev": "sls deploy -r eu-west-1 --stage dev --verbose",
+    "deploy:test": "sls deploy -r eu-west-1 --stage tes --verbose",
+    "deploy:prod": "sls deploy -r eu-west-1 --stage prod --verbose"
+  },
+  "author": "ymaghzaz@gmail.com <Youssef maghzaz>",
+  "license": "MIT"
+}

@@ -2,11 +2,14 @@ service: sls-groundtruth-input
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: python2.7
+
+stage: ${opt:stage, 'dev'}
+region: ${opt:stage, 'eu-west-1'}
 
 functions:
   groundtruth-pre-labeling:
-    handler: preLabeling.handler
+    handler: preLabeling.lambda_handler
 
   groundtruth-post-labeling:
-    handler: postLabeling.handler
+    handler: postLabeling.lambda_handler
